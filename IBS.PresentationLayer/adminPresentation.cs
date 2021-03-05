@@ -143,7 +143,7 @@ namespace IBS.PresentationLayer
                     heading("IBS Admin");
                     Console.WriteLine("\n\n\n\t\t\t\t\t\t\tAdmin\n");
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
-                    Console.WriteLine("\n\t\t\t\t\t 1. View all new Registered Users\n\t\t\t\t\t 2. View All Account Details\n\t\t\t\t\t 3. View All transactions\n\t\t\t\t\t 4. Calculate interest\n\t\t\t\t\t 5. ");
+                    Console.WriteLine("\n\t\t\t\t\t 1. View all new Registered Users\n\t\t\t\t\t 2. View All Account Details\n\t\t\t\t\t 3. View All transactions\n\t\t\t\t\t 4. Calculate interest\n\t\t\t\t\t 5. LOG OUT ");
 
 
                     Console.ForegroundColor = ConsoleColor.Black;
@@ -347,7 +347,6 @@ namespace IBS.PresentationLayer
             {
                 Console.WriteLine("\n No Transactions yet to display");
             }
-            Console.ReadKey();
         }
 
         public void display_accountdetails(List<Account> accountlist)

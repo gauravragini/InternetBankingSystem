@@ -21,19 +21,25 @@ namespace IBS.BussinessLayer
         //account and balance validation can be done by making respective functions in dataAccessLayer and using it here
         public string b_deposit(double damount, string accountno)
         {
+            double availbal = dmt.d_availablebalance(accountno);
             string bal;
             if (damount < 0)
             {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
-                bal = " Sorry ... you have entered Invalid Amount";
-                
-                
+                bal = " Sorry ... you have entered Invalid Amount";                               
             }
             else
             {
-                bal = dmt.d_deposit(damount, accountno);
-                bal = " Amount " + damount + " deposited to Account Number : " + accountno + "\n Available Balance : " + bal;
+                if (availbal == 0 && damount < 1000)
+                {
+                    bal = "To do Transactions, first deposit should be minimum amount of 1000";
+                }
+                else
+                {
+                    bal = dmt.d_deposit(damount, accountno);
+                    bal = " Amount " + damount + " deposited to Account Number : " + accountno + "\n Available Balance : " + bal;
+                }             
 
             }
             return bal;

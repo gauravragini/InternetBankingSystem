@@ -103,16 +103,32 @@ namespace IBS.PresentationLayer
                 goto namelabel;
             }
 
-            //input user address
+        //input user address
+        addresslabel:
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-
-            Console.WriteLine("\n\tAddress: (51Z, Green XXXX , YYYYYY YYYYY)");
-
+            Console.WriteLine("\n\tAddress: (address should include house no,name,street no,area)");
             Console.ForegroundColor = ConsoleColor.Black;
             Console.SetCursorPosition(Console.CursorLeft + 8, Console.CursorTop);
-
-
             string add = Console.ReadLine();
+
+            try
+            {
+                if (add.Length < 15)
+                    throw new DataEntryException("Please Enter Detailed Address");
+            }
+            catch (DataEntryException e)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed; 
+                Console.WriteLine(e.Message);
+                goto addresslabel;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.Beep();
+                goto addresslabel;
+            }
+
 
         //input pin
         pinlabel:
@@ -539,7 +555,7 @@ namespace IBS.PresentationLayer
             moblabel:
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
 
-                Console.WriteLine("\n\tMobile Number: (87342XXXXX-10 Digit) ");
+                Console.WriteLine("\n\tMobile Number: (XXXXXXXXXX 10 Digit Number) ");
                 Console.SetCursorPosition(Console.CursorLeft + 8, Console.CursorTop);
 
                 Console.ForegroundColor = ConsoleColor.Black;
@@ -571,17 +587,31 @@ namespace IBS.PresentationLayer
                 }
                 long nmob = long.Parse(nmobx);
 
-                //input address
+            //input address
+            naddresslabel:
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-
                 Console.WriteLine("\n\tAddress:  (address should include house no,name,street no,area)");
-                Console.SetCursorPosition(Console.CursorLeft + 8, Console.CursorTop);
-
-
-
                 Console.ForegroundColor = ConsoleColor.Black;
-
+                Console.SetCursorPosition(Console.CursorLeft + 8, Console.CursorTop);
                 string nadd = Console.ReadLine();
+
+                try
+                {
+                    if (nadd.Length < 15)
+                        throw new DataEntryException("Please Enter Detailed Address");
+                }
+                catch (DataEntryException e)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine(e.Message);
+                    goto naddresslabel;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.Beep();
+                    goto naddresslabel;
+                }
 
                 nomineelist.Add(new Nominee(nname, nrelation, nage, ngender, nmob, nadd));
 
@@ -692,7 +722,7 @@ namespace IBS.PresentationLayer
                 Console.Clear();
                 heading();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.WriteLine("\n\n\n\t\t\t\t\t\t  1. Deposit Money \n\t\t\t\t\t\t  2. WithDraw Money \n\t\t\t\t\t\t  3. Transfer Money \n\t\t\t\t\t\t  4. Interest Amount \n\t\t\t\t\t\t  5. View Balance \n\t\t\t\t\t\t  6. Update Password \n\t\t\t\t\t\t  7. Exit");
+                Console.WriteLine("\n\n\n\t\t\t\t\t\t  1. Deposit Money \n\t\t\t\t\t\t  2. WithDraw Money \n\t\t\t\t\t\t  3. Transfer Money \n\t\t\t\t\t\t  4. Interest Amount \n\t\t\t\t\t\t  5. View Balance \n\t\t\t\t\t\t  6. Update Password \n\t\t\t\t\t\t  7. LOG OUT");
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("\n\t\t\t\t\t\t Enter Your Choice :");
                 Console.SetCursorPosition(Console.CursorLeft + 60, Console.CursorTop);

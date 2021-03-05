@@ -114,6 +114,8 @@ namespace IBS.DataAccessLayer
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@accno", accountno);
                 cmd.Parameters.AddWithValue("@interest", interest);
+                cmd.Parameters.Add("@balance", SqlDbType.Money);
+                cmd.Parameters["@balance"].Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
                 bal = Convert.ToString(cmd.Parameters["@balance"].Value);
                 c.Close();
