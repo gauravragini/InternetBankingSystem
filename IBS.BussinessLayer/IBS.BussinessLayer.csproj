@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IBS.DataAccessLayer\IBS.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\IBS.Entities\IBS.Entities.csproj" />
+    <ProjectReference Include="..\IBS.Exceptions\IBS.Exceptions.csproj" />
+  </ItemGroup>
+
+</Project>

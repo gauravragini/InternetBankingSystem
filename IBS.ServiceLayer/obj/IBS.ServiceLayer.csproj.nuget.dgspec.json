@@ -1,0 +1,429 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.ServiceLayer\\IBS.ServiceLayer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\IBS.BussinessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\IBS.BussinessLayer.csproj",
+        "projectName": "IBS.BussinessLayer",
+        "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\IBS.BussinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Ragini\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ragini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\IBS.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\IBS.DataAccessLayer.csproj"
+              },
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj"
+              },
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\IBS.DataAccessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\IBS.DataAccessLayer.csproj",
+        "projectName": "IBS.DataAccessLayer",
+        "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\IBS.DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Ragini\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ragini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj"
+              },
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj",
+        "projectName": "IBS.Entities",
+        "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj",
+        "packagesPath": "C:\\Users\\Ragini\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ragini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj",
+        "projectName": "IBS.Exceptions",
+        "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj",
+        "packagesPath": "C:\\Users\\Ragini\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ragini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.PresentationLayer\\IBS.PresentationLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.PresentationLayer\\IBS.PresentationLayer.csproj",
+        "projectName": "IBS.PresentationLayer",
+        "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.PresentationLayer\\IBS.PresentationLayer.csproj",
+        "packagesPath": "C:\\Users\\Ragini\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.PresentationLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ragini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\IBS.BussinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\IBS.BussinessLayer.csproj"
+              },
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Entities\\IBS.Entities.csproj"
+              },
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.Exceptions\\IBS.Exceptions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.ServiceLayer\\IBS.ServiceLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.ServiceLayer\\IBS.ServiceLayer.csproj",
+        "projectName": "IBS.ServiceLayer",
+        "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.ServiceLayer\\IBS.ServiceLayer.csproj",
+        "packagesPath": "C:\\Users\\Ragini\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.ServiceLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ragini\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\IBS.BussinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.BussinessLayer\\IBS.BussinessLayer.csproj"
+              },
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\IBS.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.DataAccessLayer\\IBS.DataAccessLayer.csproj"
+              },
+              "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.PresentationLayer\\IBS.PresentationLayer.csproj": {
+                "projectPath": "C:\\Users\\Ragini\\Desktop\\InternetBankingSolutions\\IBS.PresentationLayer\\IBS.PresentationLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
