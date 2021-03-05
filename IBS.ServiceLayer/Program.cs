@@ -41,9 +41,9 @@ namespace IBS.ServiceLayer
                         heading("IBS");
 
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("\n\n\n\t\t\t\t\t\t\tLOGIN PORTAL");
+                        Console.WriteLine("\n\n\n\t\t\t\t\t\t      LOGIN PORTAL");
                         Console.ForegroundColor = ConsoleColor.Black;
-                        Console.WriteLine("\t\t\t\t\t\t\t-------------");
+                        Console.WriteLine("\t\t\t\t\t\t      -------------");
                         Console.WriteLine("\n\n\t\t\t\t\t    please enter your UserID Number : ");
                         Console.SetCursorPosition(Console.CursorLeft + 55, Console.CursorTop);
                         string userid = Console.ReadLine();
@@ -57,9 +57,15 @@ namespace IBS.ServiceLayer
                             string role = ba.b_checkRole(userid, password);
                             Console.WriteLine(role);
                             if (role == "customer")
+                            {
                                 up.usermenu(userid, password);
+                                
+                            }
                             else if (role == "admin")
+                            {
                                 ap.adminMenu(userid);
+                                
+                            }
                         }
                         else
                         {
@@ -68,10 +74,10 @@ namespace IBS.ServiceLayer
                             Console.WriteLine("\nIncorrect Username no or password\nLogin Failed");
                             Console.Beep();
                             Console.ForegroundColor = ConsoleColor.Black;
-
+                            Console.WriteLine("\nPress any Key to go back");
+                            Console.ReadKey();
                         }
-                        Console.WriteLine("\nPress any Key to go back");
-                        Console.ReadKey();
+                        
                         break;
 
                     case 2:

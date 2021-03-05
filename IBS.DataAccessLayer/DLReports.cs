@@ -60,12 +60,13 @@ namespace IBS.DataAccessLayer
                 {
                     while (rd.Read())
                     {
-                        string accno = rd.GetString(0);
-                        string atype = rd.GetString(1);
-                        double bal = rd.GetSqlMoney(2).ToDouble();
-                        double intrestamt = rd.GetSqlMoney(3).ToDouble();
-                        DateTimeOffset time = rd.GetDateTimeOffset(4);
-                        accountlist.Add(new Account(accno, atype, bal, intrestamt, time));
+                        Account a = new Account();
+                        a.AccountNumber = rd.GetString(0);
+                        a.AccountType = rd.GetString(1);
+                        a.AccountBalance = rd.GetSqlMoney(2).ToDouble();
+                        a.InterestAmount = rd.GetSqlMoney(3).ToDouble();
+                        a.AccountCreationTime = rd.GetDateTimeOffset(4);
+                        accountlist.Add(a);
                     }
                 }
                 c.Close();
