@@ -23,7 +23,7 @@ namespace IBS.BussinessLayer
         {
             double availbal = dmt.d_availablebalance(accountno);
             string bal;
-            if (damount < 0)
+            if (damount <= 0)
             {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -46,58 +46,74 @@ namespace IBS.BussinessLayer
         }
         public string b_withdraw(double wamount, string accountno)
         {
-            //setting minimum balance to 1000
             string bal;
-            double minbal = 1000;
-            double availbal = dmt.d_availablebalance(accountno);
-            if (availbal - wamount < minbal)
+            if (wamount <= 0)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Beep();
-                bal = "\t\tInsufficient Balance\n\n" +
-                    "\t\tMinimium Balance for the account existence is 1000\n\t\tAvailable Balance: "+availbal;
-                Console.ForegroundColor = ConsoleColor.Black;
-                
+                Console.ForegroundColor = ConsoleColor.Red;
+                bal = " Sorry ... you have entered Invalid Amount";
             }
             else
             {
-                bal = dmt.d_withdraw(wamount, accountno);
-                bal = " Amount " + wamount + " withdrawn to Account Number : " + accountno + "\n Available Balance : " + bal;
-            }
+                //setting minimum balance to 1000
+                double minbal = 1000;
+                double availbal = dmt.d_availablebalance(accountno);
+                if (availbal - wamount < minbal)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Beep();
+                    bal = "\t\tInsufficient Balance\n\n" +
+                        "\t\tMinimium Balance for the account existence is 1000\n\t\tAvailable Balance: " + availbal;
+                    Console.ForegroundColor = ConsoleColor.Black;
 
+                }
+                else
+                {
+                    bal = dmt.d_withdraw(wamount, accountno);
+                    bal = " Amount " + wamount + " withdrawn to Account Number : " + accountno + "\n Available Balance : " + bal;
+                }
+
+            }
             return bal;
         }
         public string b_transfer(double tamount, string toaccount, string accountno)
         {
             string bal;
-            double minbal = 1000;
-            double availbal = dmt.d_availablebalance(accountno);
-            if (availbal - tamount < minbal)
+            if (tamount <= 0)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Beep();
-                bal = "\t\tInsufficient Balance\n\n" +
-                    "\t\tMinimium Balance for the account existence is 1000\n\t\tAvailable Balance: " + availbal;
-                Console.ForegroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Red;
+                bal = " Sorry ... you have entered Invalid Amount";
             }
             else
             {
-                bool flag = dmt.d_accountexists(toaccount);
-                if (flag)
+                double minbal = 1000;
+                double availbal = dmt.d_availablebalance(accountno);
+                if (availbal - tamount < minbal)
                 {
-                    bal = dmt.d_transfer(tamount, toaccount, accountno);
-                    bal = " Amount " + tamount + " Transferred to Account Number : " + toaccount + "\n Available Balance : "+bal;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Beep();
+                    bal = "\t\tInsufficient Balance\n\n" +
+                        "\t\tMinimium Balance for the account existence is 1000\n\t\tAvailable Balance: " + availbal;
+                    Console.ForegroundColor = ConsoleColor.Black;
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    bal = " Sorry... You have entered an account number That Does not exist";
-                    Console.Beep();
+                    bool flag = dmt.d_accountexists(toaccount);
+                    if (flag)
+                    {
+                        bal = dmt.d_transfer(tamount, toaccount, accountno);
+                        bal = " Amount " + tamount + " Transferred to Account Number : " + toaccount + "\n Available Balance : " + bal;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        bal = " Sorry... You have entered an account number That Does not exist";
+                        Console.Beep();
+                    }
                 }
-
-            }
-            return bal;
-
+            }          
+           return bal;
         }
 
         public double b_availablebalance(string accno)

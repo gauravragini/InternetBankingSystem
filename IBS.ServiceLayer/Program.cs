@@ -82,24 +82,25 @@ namespace IBS.ServiceLayer
 
                     case 2:
                         //Resgitration for both user and admin
+                      
                         Console.Clear();
                         heading("IBS Registration");
                         Console.ForegroundColor = ConsoleColor.DarkBlue;
                         Console.WriteLine("\n\n\n\n\t\t\tDo u want register as an admin or a user(Press A for admin and U for user)?\n\n");
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.SetCursorPosition(Console.CursorLeft + 57, Console.CursorTop);
-                        char s = Console.ReadLine()[0];
-                        if (s=='A' || s=='a')
+                        string s = Console.ReadLine();
+                        if (s=="A" || s=="a")
                         {
                             Console.Clear();
                             heading("IBS Admin Registration");
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine("\n\n\t\t\t\t\t\t   Register Your Account");
-                            Console.WriteLine("\t\t\t\t\t\t   ---------------------");
+                            Console.WriteLine("\t\t\t\t\t\t   ---------------------"); 
                             Console.WriteLine("\n\n\tPlease enter your Personal details: ");
                             ap.adminregistration();
                         }
-                        else if (s=='u' || s=='U')
+                        else if (s=="U" || s=="u")
                         {
                             Console.Clear();
                             heading("IBS User Registration");
@@ -108,6 +109,16 @@ namespace IBS.ServiceLayer
                             Console.WriteLine("\t\t\t\t\t\t   ---------------------");
                             Console.WriteLine("\n\n\tPlease enter your Personal details: ");
                             up.userRegistration();                                                                                
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.SetCursorPosition(Console.CursorLeft + 50, Console.CursorTop);
+                            Console.WriteLine("\nIncorrect Input ");
+                            Console.Beep();
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.WriteLine("\nPress any Key to go back");
+                            Console.ReadKey();
                         }
                         break;
 

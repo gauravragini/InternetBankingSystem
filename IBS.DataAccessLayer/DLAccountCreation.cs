@@ -372,7 +372,7 @@ namespace IBS.DataAccessLayer
                 c.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = c;
-                cmd.CommandText = "delete from Users where status = 'applied'";
+                cmd.CommandText = "delete from Customers where status = 'applied'";
                 cmd.ExecuteNonQuery();
                 c.Close();
             }

@@ -13,8 +13,8 @@ namespace IBS.DataAccessLayer
     {
         public void d_CalculateInterest(List<Account> accountlist,string adminid)
         {
-            double fixedinterstrate = 6;
-            double savinginterestrate = 8;
+            double fixedinterstrate = 0.5;
+            double savinginterestrate = 0.7;
 
             foreach (Account a in accountlist)
             {

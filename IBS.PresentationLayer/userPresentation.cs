@@ -40,7 +40,7 @@ namespace IBS.PresentationLayer
                 //Waiting for admin to approve or disapprove
                 Console.WriteLine("\nApplied for registering the bank account");
                 Console.WriteLine("Please wait for approval from bank administrator....");
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(3000);
 
                 string currstatus = ba.b_checkStatus(uid);
                 displayStatus(currstatus, uid);
@@ -86,7 +86,7 @@ namespace IBS.PresentationLayer
 
             try
             {
-                Regex rname = new Regex("^[a-zA-Z\\s]+$");
+                Regex rname = new Regex("^[a-zA-Z ]+$");
                 if (!(rname.IsMatch(name)))
                     throw new DataEntryException("Please Enter Valid Name(Special Characters and numbers not allowed)");
             }
@@ -241,6 +241,8 @@ namespace IBS.PresentationLayer
         fnamelabel:
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("\n\tFather's Name: ");
+           
+
             Console.SetCursorPosition(Console.CursorLeft + 8, Console.CursorTop);
 
             Console.ForegroundColor = ConsoleColor.Black;
@@ -248,7 +250,7 @@ namespace IBS.PresentationLayer
             string fname = Console.ReadLine();
             try
             {
-                Regex rname = new Regex("[a-zA-Z]+\\.?");
+                Regex rname = new Regex("^[a-zA-Z\\s]+$");
                 if (!(rname.IsMatch(fname)))
                     throw new DataEntryException("Please Enter Valid Name(Special Characters and numbers not allowed)");
             }
@@ -283,7 +285,7 @@ namespace IBS.PresentationLayer
             string mname = Console.ReadLine();
             try
             {
-                Regex rname = new Regex("[a-zA-Z]+\\.?");
+                Regex rname = new Regex("^[a-zA-Z\\s]+$");
                 if (!(rname.IsMatch(mname)))
                     throw new DataEntryException("Please Enter Valid Name(Special Characters and numbers not allowed)");
             }
@@ -317,9 +319,9 @@ namespace IBS.PresentationLayer
             string mobx = Console.ReadLine();
             try
             {
-                Regex rmob = new Regex("^[0-9]{10}$");
+                Regex rmob = new Regex("^[2-9]{1}[0-9]{9}$");
                 if (!(rmob.IsMatch(mobx.ToString())))
-                    throw new DataEntryException("Please Enter Valid Mobile number(10 digit))");
+                    throw new DataEntryException("Please Enter Valid Mobile number(10 digit) and should not start with 0 or 1)");
             }
             catch (DataEntryException e)
             {
@@ -458,7 +460,7 @@ namespace IBS.PresentationLayer
                 string nrelation = Console.ReadLine();
                 try
                 {
-                    Regex rrel = new Regex("[a-zA-Z]+\\.?");
+                    Regex rrel = new Regex("^[a-zA-Z\\s]+$");
                     if (!(rrel.IsMatch(nrelation)))
                         throw new DataEntryException("Invalid input");
                 }
@@ -493,7 +495,7 @@ namespace IBS.PresentationLayer
                 string nagex = Console.ReadLine();
                 try
                 {
-                    Regex rage = new Regex("^[0-9]{2}$");
+                    Regex rage = new Regex("^[1-9]|[0-9]{2}$");
                     if (!(rage.IsMatch(nagex)))
                         throw new DataEntryException("Enter valid Age of the nominee");
                 }
@@ -563,9 +565,9 @@ namespace IBS.PresentationLayer
                 string nmobx = Console.ReadLine();
                 try
                 {
-                    Regex rmob = new Regex("^[0-9]{10}$");
+                    Regex rmob = new Regex("^[2-9]{1}[0-9]{9}$");
                     if (!(rmob.IsMatch(nmobx.ToString())))
-                        throw new DataEntryException("Please Enter Valid Mobile number(10 digit))");
+                        throw new DataEntryException("Please Enter Valid Mobile number(10 digit) and it should not start with  0 or 1)");
                 }
                 catch (DataEntryException e)
                 {
@@ -604,6 +606,7 @@ namespace IBS.PresentationLayer
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(e.Message);
+                    Console.Beep();
                     goto naddresslabel;
                 }
                 catch (Exception e)
@@ -722,7 +725,8 @@ namespace IBS.PresentationLayer
                 Console.Clear();
                 heading();
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.WriteLine("\n\n\n\t\t\t\t\t\t  1. Deposit Money \n\t\t\t\t\t\t  2. WithDraw Money \n\t\t\t\t\t\t  3. Transfer Money \n\t\t\t\t\t\t  4. Interest Amount \n\t\t\t\t\t\t  5. View Balance \n\t\t\t\t\t\t  6. Update Password \n\t\t\t\t\t\t  7. LOG OUT");
+                Console.WriteLine("\n\n\n\t\t\t\t\t\t\tCUSTOMER");
+                Console.WriteLine("\n\t\t\t\t\t\t  1. Deposit Money \n\t\t\t\t\t\t  2. WithDraw Money \n\t\t\t\t\t\t  3. Transfer Money \n\t\t\t\t\t\t  4. Interest Amount \n\t\t\t\t\t\t  5. View Balance \n\t\t\t\t\t\t  6. Update Password \n\t\t\t\t\t\t  7. LOG OUT");
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("\n\t\t\t\t\t\t Enter Your Choice :");
                 Console.SetCursorPosition(Console.CursorLeft + 60, Console.CursorTop);
@@ -740,6 +744,9 @@ namespace IBS.PresentationLayer
                             double damount = double.Parse(Console.ReadLine());
                             string bal = bmt.b_deposit(damount, accountno);
                             Console.WriteLine(bal);
+
+                            Console.WriteLine("\nPress any key to go back");
+                            Console.ReadKey();
                             break;
 
                         case 2:
@@ -751,6 +758,9 @@ namespace IBS.PresentationLayer
                             double wamount = double.Parse(Console.ReadLine());
                             string bal2 = bmt.b_withdraw(wamount, accountno);
                             Console.WriteLine(bal2);
+
+                            Console.WriteLine("\nPress any key to go back");
+                            Console.ReadKey();
                             break;
 
                         case 3:
@@ -764,6 +774,9 @@ namespace IBS.PresentationLayer
                             double tamount = double.Parse(Console.ReadLine());
                             string bal3 = bmt.b_transfer(tamount, toaccount, accountno);
                             Console.WriteLine(bal3);
+
+                            Console.WriteLine("\nPress any key to go back");
+                            Console.ReadKey();
                             break;
 
                         case 4:
@@ -781,16 +794,26 @@ namespace IBS.PresentationLayer
                                     case 1:
                                         string bal4 = bi.b_WithdrawInterest(interest, accountno);
                                         Console.WriteLine("\t Interest Amount Withdrawn \n\t  Interest Balance: 0.00 \n\t Available Balance : " + bal4);
+
+                                        Console.WriteLine("\nPress any key to go back");
+                                        Console.ReadKey();
                                         break;
                                     case 2:
                                         string bal5 = bi.b_AddInterest(interest, accountno);
                                         Console.WriteLine("\t Interest Amount Added to Account Balance \n\t Interest Balance: 0.00 \n\t Available Balance : " + bal5);
+                                        Console.WriteLine("\nPress any key to go back");
+                                        Console.ReadKey();
                                         break;
                                     case 3:
                                         break;
                                     default:
                                         break;
-                                }
+                                }                               
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nPress any key to go back");
+                                Console.ReadKey();
                             }
                             break;
 
@@ -799,17 +822,42 @@ namespace IBS.PresentationLayer
                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                             Console.WriteLine("\n\t\t\tAvailable Balance :" + balance);
                             Console.ForegroundColor = ConsoleColor.Black;
+
+                            Console.WriteLine("\nPress any key to go back");
+                            Console.ReadKey();
                             break;
 
                         case 6:
+                            passlabel:
                             Console.ForegroundColor = ConsoleColor.DarkBlue;
                             Console.WriteLine("\n\t\t\tEnter New Password");
                             Console.SetCursorPosition(Console.CursorLeft + 24, Console.CursorTop);
-
                             Console.ForegroundColor = ConsoleColor.Black;
                             string newpassword = (Console.ReadLine());
+
+                            try
+                            {
+                                if (newpassword.Length < 6)
+                                    throw new DataEntryException("password length should be greater than 5");
+                            }
+                            catch (DataEntryException e)
+                            {
+                                Console.ForegroundColor = ConsoleColor.DarkRed;
+                                Console.WriteLine(e.Message);
+                                Console.Beep();
+                                goto passlabel;
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(e.Message);
+                                Console.Beep();
+                                goto passlabel;
+                            }
                             bmt.b_updatePassword(newpassword, accountno);
                             Console.WriteLine("\n\t Password Updated \n\t New Password : " + newpassword);
+
+                            Console.WriteLine("\nPress any key to go back");
+                            Console.ReadKey();
                             break;
 
                         case 7:
@@ -824,9 +872,9 @@ namespace IBS.PresentationLayer
                 {
                     Console.WriteLine(e.Message);
                 }
-             
-                Console.WriteLine("\nPress any key to go back");
-                Console.ReadKey();
+
+               // Console.WriteLine("\nPress any key to go back");
+               // Console.ReadKey();
             }
 
 

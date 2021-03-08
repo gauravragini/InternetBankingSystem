@@ -58,7 +58,7 @@ namespace IBS.PresentationLayer
             string mobx = Console.ReadLine();
             try
             {
-                Regex rmob = new Regex("^[0-9]{10}$");
+                Regex rmob = new Regex("^[2-9]{1}[0-9]{9}$");
                 if (!(rmob.IsMatch(mobx.ToString())))
                     throw new DataEntryException("Please Enter Valid Mobile number(10 digit))");
             }
@@ -117,6 +117,8 @@ namespace IBS.PresentationLayer
             }
 
             Admins registeradmin = new Admins(name, mob, email);
+            Console.WriteLine("\nRegistration Complete...");
+            System.Threading.Thread.Sleep(3000);
             string res = ba.b_adminRegistration(registeradmin);
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine(res+"\n\n");
@@ -195,7 +197,7 @@ namespace IBS.PresentationLayer
                                 accountlist = br.b_AccountDetails();
                                 display_accountdetails(accountlist);
                                 bi.b_CalculateInterest(accountlist, adminid);
-                                Console.WriteLine("\n\n\t Account details after Calculate Interest\n\tInterest rate is 6% for Fixed Account and 8% for Saving Account\n");
+                                Console.WriteLine("\n\n\t Account details after Calculate Interest\n\tInterest rate is 0.5% permonth for Fixed Account and 0.7% permonth for Saving Account\n");
                                 accountlist = br.b_AccountDetails();
                                 display_accountdetails(accountlist);
                             }
